@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hybrid IDS Attack Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <span class="badge">DEFENSIVE SECURITY LAB</span>
+  <h1>Hybrid IDS Attack Simulator</h1>
+  <p>Safely generate controlled test events for the Hybrid Intrusion Detection & Security Monitoring System.</p>
+  <div class="status"><i id="dot"></i><span id="status">Checking backend…</span><code>https://hybrid-ids-security-monitoring-system.onrender.com</code></div>
+</header>
+
+<section>
+  <div class="heading"><div><h2>Simulation Scenarios</h2><p>Click a button to send one controlled event to the live IDS.</p></div><button id="health">Check Backend</button></div>
+  <div class="grid">
+    <article><div class="icon">⌁</div><h3>Port Scan</h3><p>Simulates one source contacting many destination ports.</p><small>SIG-PORTSCAN-001</small><button class="attack port" data-key="portscan">Simulate Port Scan</button></article>
+    <article><div class="icon">↯</div><h3>Brute Force</h3><p>Simulates repeated failed authentication attempts.</p><small>SIG-BRUTEFORCE-001</small><button class="attack brute" data-key="bruteforce">Simulate Brute Force</button></article>
+    <article><div class="icon">⌘</div><h3>Suspicious HTTP</h3><p>Simulates a suspicious HTTP request pattern.</p><small>SIG-HTTP-001</small><button class="attack http" data-key="http">Simulate Suspicious HTTP</button></article>
+    <article><div class="icon">◈</div><h3>ML Anomaly</h3><p>Generates unusual network characteristics for ML evaluation.</p><small>Isolation Forest</small><button class="attack anomaly" data-key="anomaly">Simulate Anomaly</button></article>
+  </div>
+  <div class="actions"><button id="all">▶ Run All 4 Simulations</button><button id="clear">Clear Output</button></div>
+</section>
+
+<section>
+  <div class="heading"><div><h2>Simulation Output</h2><p>Live responses from the IDS backend.</p></div><span id="count">0 events sent</span></div>
+  <div id="empty" class="empty">◌<strong>No simulation run yet</strong><span>Choose one of the four scenarios above.</span></div>
+  <div id="results"></div>
+</section>
+<footer>Hybrid IDS Security Monitoring System · Controlled defensive demonstration only</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
